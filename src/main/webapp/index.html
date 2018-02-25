@@ -16,6 +16,38 @@
 	function renderShoes(response) {
 		var shoes = response[0].pageFunctionResult.images;
 		console.log(shoes);
+		var tbody = $("table tbody");
+		tbody.empty();
+		for(var s in shoes) {
+			var shoe = shoes[s];
+			var src = shoe.src;
+			var alt = shoe.alt;
+			var tr = $("<tr>");
+			
+			var td = $("<td>");
+			td.append(alt);
+			tr.append(td);
+			
+			var img = $("<img>");
+			img.attr("src", src);
+			td = $("<td>");
+			td.append(img);
+			tr.append(td);
+			
+			tbody.append(tr);
+		}
 	}
 </script>
 <h1>Hello from Zappos</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Image</th>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+
