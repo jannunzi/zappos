@@ -1,1 +1,21 @@
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script>
+	jQuery(init);
+	
+	function init() {
+		var url = 'https://api.apify.com/v1/T3SdW265JfwLLye6b/crawlers/6xArEFjx8t8uTfKZf/lastExec/results?token=QbtZmg84awudg7J2Hc8e7ZckP';
+		$.ajax({
+			url: url,
+			success: renderShoes
+		});
+	}
+	
+	function renderShoes(response) {
+		var shoes = response[0].pageFunctionResult.images;
+		console.log(shoes);
+	}
+</script>
 <h1>Hello from Zappos</h1>
